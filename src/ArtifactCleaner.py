@@ -155,7 +155,6 @@ def setup_logging(debug_mode):
 
 if __name__ == "__main__":
     args = setup_args(sys.argv[1:])
-    # args = setup_args("-u admin -p admin123 -n http://localhost:8080/nexus -r snapshots -g com.test -a test-api -d 20140501".split())
 
     arg_DRY_RUN = args.dryRun
     arg_USERNAME = args.username
