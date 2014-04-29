@@ -3,7 +3,7 @@ Features:
 2. Delete versions older than a specific date.
 3. Delete old versions by keeping the latest N versions.
 4. Dry Run mode. Preview all the changes to be made.
-5. Clean multiple artifacts in one run. 
+5. Clean multiple artifacts in one run.
 
 #######################################################################################
 usage: ArtifactCleaner.py [-h] [-y] [--debug] -u USERNAME -p PASSWORD -n
