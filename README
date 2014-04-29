@@ -1,0 +1,34 @@
+Features:
+1. Delete old versions of an artifact.
+2. Delete versions older than a specific date.
+3. Delete old versions by keeping the latest N versions.
+4. Dry Run mode. Preview all the changes to be made.
+
+#######################################################################################
+usage: ArtifactCleaner.py [-h] [-y] [--debug] -u USERNAME -p PASSWORD -n
+                          NEXUSURL -r REPOSITORYID -g GROUPID -a ARTIFACTID
+                          (-l KEEPLAST | -d KEEPDATE)
+
+parsing command line arguments...
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -y, --dryRun
+      --debug           show more debugging information.
+  -u USERNAME, --username USERNAME
+  -p PASSWORD, --password PASSWORD
+  -n NEXUSURL, --nexusUrl NEXUSURL
+  -r REPOSITORYID, --repositoryId REPOSITORYID
+                        repository id. For example, public.
+  -g GROUPID, --groupId GROUPID
+  -a ARTIFACTID, --artifactId ARTIFACTID
+                        Can be used multiple times.
+  -l KEEPLAST, --keepLast KEEPLAST
+                        Keep latest N versions
+  -d KEEPDATE, --keepDate KEEPDATE
+                        Delete all versions before this date. Format is YYYYMMDD.
+#######################################################################################
+Sample usage:
+python ArtifactCleaner.py -l 2 -y -u admin -p admin123 -n http://localhost:8080/nexus/ -r snapshots -g com.test -a test-api
+python ArtifactCleaner.py -d 20140501 -y -u admin -p admin123 -n http://localhost:8080/nexus/ -r snapshots -g com.test -a test-api
+#######################################################################################
